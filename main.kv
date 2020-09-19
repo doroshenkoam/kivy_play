@@ -1,0 +1,131 @@
+#:kivy 1.1
+
+
+<MainMenu>
+    BoxLayout:
+        orientation: "vertical"
+        padding: 50
+        spacing: 10
+        canvas:
+            Color:
+                rgb: (0.15, 0.93, 0.93)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    # TODO: прицепить top
+        Label:
+            id: game_name
+            text: "SURVIVAL"
+            font_size: "120dp"
+            color: 0.8,0,0,1
+
+
+        Button:
+            size_hint: 0.5,1
+            pos_hint: {"center_x":0.5}
+            background_color: 1,2,1,1
+            text: "START GAME"
+            font_size: "50dp"
+            color: 255,0,0,1
+
+            on_release:
+                self.text = "In developing"
+        
+        Button:
+            size_hint: 0.5,1
+            pos_hint: {"center_x":0.5}
+            background_color: 1,2,1,1
+            text: "TOP SCORES"
+            font_size: "50dp"
+            color: 255,0,0,1
+
+            on_release:
+                self.text = "In developing"
+
+        Button:
+            size_hint: 0.5,1
+            pos_hint: {"center_x":0.5}
+            background_color: 1,2,1,1
+            text: "SETTINGS"
+            font_size: "50dp"
+            color: 255,0,0,1
+
+            on_release:
+                self.text = "In developing"
+
+        Button:
+            size_hint: 0.5,1
+            pos_hint: {"center_x":0.5}
+            background_color: 1,2,1,1
+            text: "ABOUT"
+            font_size: "50dp"
+            color: 255,0,0,1
+
+            on_release:
+                self.text = "In developing"
+
+        Button:
+            size_hint: 0.5,1
+            pos_hint: {"center_x":0.5}
+            background_color: 1,2,1,1
+            text: "CREATORS"
+            font_size: "50dp"
+            color: 255,0,0,1
+
+            on_release:
+                root.manager.current = "creators"
+
+
+<Creators>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 50
+        spacing: 10
+        canvas:
+            Color:
+                rgb: (0.15, 0.93, 0.93)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            id: developers
+            text: "Developers:"
+            font_size: "50dp"
+            color: 255,0,0,1
+
+        Label:
+            id: developer1
+            text: "Doroshenko Aleksey"
+            font_size: "50dp"
+            color: 255,0,0,1
+        
+        Label:
+            id: developer2
+            text: "Sharshakov Dmitriy Jn"
+            font_size: "50dp"
+            color: 255,0,0,1
+        
+        Label:
+            id: grafic_arts
+            text: "Grafic arts:"
+            font_size: "50dp"
+            color: 255,0,0,1
+        
+        Label:
+            id: grafic_arts
+            text: "Franzi Anastasia"
+            font_size: "50dp"
+            color: 255,0,0,1
+        
+        Button:
+            size_hint: 0.5,1
+            pos_hint: {"center_x":0.5}
+            background_color: 1,2,1,1
+            text: "BACK"
+            font_size: "50dp"
+            color: 255,0,0,1
+
+            on_release:
+                root.manager.current = "menu"
