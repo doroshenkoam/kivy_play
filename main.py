@@ -1,8 +1,9 @@
-from datetime import timedelta
+from datetime import datetime
 
 from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.clock import Clock
 
 
 class MainMenu(Screen):
@@ -18,7 +19,18 @@ class About(Screen):
 
 
 class StartGame(Screen):
-    pass
+    def count(self, *varargs):
+        self.start = datetime.now()
+        Clock.schedule_interval(self.on_timeout, 1)
+
+    def on_timeout(self, *args):
+        d = datetime.now() - self.start
+        self.label_time.text = datetime.utcfromtimestamp(d.total_seconds()).strftime(
+            "%H.%M.%S"
+        )
+
+    def on_pre_enter(self):
+        self.count(1)
 
 
 class MainApp(App):

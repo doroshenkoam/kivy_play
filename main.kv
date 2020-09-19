@@ -168,6 +168,8 @@
                 root.manager.current = "menu"
 
 <StartGame>:
+    label_time: label_time
+
     FloatLayout:
         canvas:
             Color:
@@ -206,7 +208,25 @@
                 font_size: 0.4*self.height
                 color: 255,0,0,1
 
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: 1.5,0.15
+            pos_hint: {"top":1, "right":1}
+
+            Button:
+                id: action
+                size_hint: 0.1,0.1
+                opacity: 0.25
+                text: "EXIT"
+                font_size: 0.4*self.height
+                color: 255,0,0,1
+                pos_hint: {"top":1, "right":1}
+
+                on_release:
+                    root.manager.current = "menu"
+
         Label:
-            id: time
-            pos_hint: {"top":1, "left":1}
-            
+            id: label_time
+            pos_hint: {"top":1.45, "center_x":0.1}
+            font_size: self.height * 0.05
+            color: 0.8,0,0,1
